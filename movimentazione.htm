@@ -1,0 +1,297 @@
+<!-- AWP_In_Variable Name='"from_WEB".move_est' -->
+<!-- AWP_In_Variable Name='"from_WEB".move_ovest' -->
+<!-- AWP_In_Variable Name='"from_WEB".check_est' -->
+<!-- AWP_In_Variable Name='"from_WEB".check_ovest' -->
+<!-- AWP_In_Variable Name='"from_WEB".start_est_ovest' -->
+<!-- AWP_In_Variable Name='"from_WEB".stop_est_ovest' -->
+<!-- AWP_In_Variable Name='"from_WEB".index' -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <title>WEB SERVER S71200</title>
+  </head>
+  <body>
+    <div class="row w-100">
+  <div class="col-1 h-100 w d-inline">
+    <div class="nav flex-column nav-pills shadow-lg" aria-orientation="vertical">
+      <a class="nav-link h4"  href="home.htm" aria-selected="true"> <img src="home.png" alt=""> </a>
+      <a class="nav-link active h4"  href="movimentazione.htm" aria-selected="true"> <img src="movey.png" alt=""> </a>
+      <a class="nav-link h4"  href="setup.htm"  aria-selected="false"> <img src="setup.png" alt=""> </a>
+      <a class="nav-link h4"   href="alert.htm"aria-selected="false"> <img src="alert.png" alt=""> </a>
+      <a class="nav-link ruota270 position-absolute fixed-bottom "><img style="max-width: 100px;" src="logo.png" alt=""></a>
+    </div>
+  </div>
+
+
+  <div class="col-11 h-100">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" aria-labelledby="v-pills-home-tab">
+      <div class="container">
+      <h1 class="text-center">MOVEMENT</h1>
+        <div class="row">
+          <div class="col">
+            <div class="card  mb-3  center shadow-lg">
+             <div class="card-header card-header text-center h5 text-dark bg-warning">MANUAL MOVEMENT</div>
+              <div class="card-body">
+               <div class="container">
+                <form method="post">
+                <div class="row">
+                 <div class="col">
+                 <div class="spacer"></div>
+                  <span class="float-left h2">OVEST</span>
+                  <input name='"from_WEB".check_ovest' value="1" type="checkbox" onclick="cbCheckId()" style="display: none;" id="myCheckbox1"/>
+                  <label for="myCheckbox1" class="float-right"><img style="height:50px;" class="img-fluid float-right align-middle" src="frecciasx.png"/></label>
+                <!--  <button id="frecciasx" type="button" name='"from_WEB".move_ovest' value="0"> <img style="height:50px;"  src="frecciasx.png" class="img-fluid float-right align-middle" alt=""> </button>   -->
+
+                 </div>
+                  <div class="col">
+                   <img src="pannello.webp" class="img-fluid h-auto" alt="">
+                 </div>
+                   <div class="col align-middle">
+                    <div class="spacer"></div>
+                     <span class="float-right h2">EST</span>
+                    <!-- <form method="post">  -->
+                       <input name='"from_WEB".check_est' value="1" type="checkbox" onclick="cbCheckId()" style="display: none;" id="myCheckbox2"/>
+                  <label for="myCheckbox2" class="float-left"><img style="height:50px;" class="img-fluid float-right align-middle" src="frecciadx.png"/></label>
+                  <!--   <button type="submit"> <img style="height:50px;" src="frecciadx.png" class="img-fluid float-left align-middle" alt="">
+                     <input type="button" id="frecciadx"  name='"from_WEB".move_est' value="0"> 
+                        </button>   -->
+                  <!-- </form> -->
+                
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-4 p-0">
+      <div class="card  mb-3  shadow-lg">
+        <div class="card-header text-center h5 text-dark bg-warning">TRACKER INDEX</div>
+        <div class="card-body">
+      <!--    <form>   -->
+
+            <div class="form-group">
+              <label class="h5" for="exampleFormControlSelect1">SELECT INCL.</label>
+              <select name='"from_WEB".index'  class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+              </select>
+            </div>
+
+
+
+
+
+
+       <!--   </form>   -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-4">
+      <div class="card  mb-3  shadow-lg">
+        <div class="card-body">
+          <button type="submit" name='"from_WEB".start_est_ovest' value="1" class="btn btn-success w-100 p-2">START</button>
+          <div class="spacer35"></div>
+          <button type="submit" name='"from_WEB".stop_est_ovest' value="1" class="btn btn-danger w-100 p-2">STOP</button>
+
+        </div>
+      </div>
+
+    </div>
+</form>
+
+    <div class="col-4 align-middle p-0">
+      <div class="card  mb-3  shadow-lg">
+        <div class="card-header text-center h5 text-dark bg-warning">ACTUAL POSITION INCL: <strong> :="from_WEB".index: </strong></div>
+        <div class="card-body">
+        <form>
+  <div class="form-group row">
+    <label class="h5 col-4" for="date">X</label>
+   <!-- <input type="text" class="form-control text-center col-8" id="primsec" readonly>   -->
+  <p id="primsec" value=""></p>   
+  </div>
+  <div class="form-group row">
+    <label class="h5 col-4" for="time">Y</label>
+   <!-- <input type="text" class="form-control text-center col-8" id="primsec2" readonly>   -->
+      <p id="primsec2" value=""></p>   
+
+  </div>
+    <div class="form-group row">
+    <label class="h5 col-4" for="time">Z</label>
+   <!-- <input type="text" class="form-control text-center col-8" id="primsec3" readonly>   -->
+      <p id="primsec3" value=""></p>   
+
+  </div>
+</form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+           $.ajaxSetup({ cache : false });
+           setInterval(function(){
+              $.get("primsec.htm", function(result){
+              $('#primsec').text(result.trim()/10);
+            });
+           },1000);
+           setInterval(function(){
+              $.get("primsec2.htm", function(result){
+              $('#primsec2').text(result.trim()/10);
+            });
+           },1000);
+            setInterval(function(){
+              $.get("primsec3.htm", function(result){
+              $('#primsec3').text(result.trim()/10);
+            });
+           },1000);
+      });
+
+
+
+       function cbCheckId(){
+       var cbObj = document.getElementById('myCheckbox1');
+       var cbObj2 = document.getElementById('myCheckbox2');
+        if (cbObj.checked && cbObj2.checked){
+            alert("ATTENZIONE! Impossibile selezionare due direzioni di movimentazione. Seleziona una sola direzione (EST o OVEST) prima di continuare!");
+          cbObj.checked  = false;
+          cbObj2.checked = false;
+        }
+        else{
+            return null;
+          };
+       };
+
+
+
+
+
+    </script>
+  </body>
+</html>
+ 
+
+
+
+
+<!--     
+  let x = parseInt(document.getElementById('primsec').innerHTML) / 10;  
+  let y = parseInt(document.getElementById('primsec2').innerHTML) / 10;
+  let z = parseInt(document.getElementById('primsec3').innerHTML) / 10;
+
+  document.getElementById('primsec').innerHTML  =  x  + '°';
+  document.getElementById('primsec2').innerHTML =  y  + '°';
+  document.getElementById('primsec3').innerHTML =  z  + '°';
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var x = document.getElementById('primsec').value;
+  x = parseInt(x)/10;
+  primsec.setAttribute("value", x);
+
+  var y = document.getElementById('primsec2').value;
+  y = parseInt(y)/10;
+  primsec2.setAttribute("value", y);
+
+  var z = document.getElementById('primsec3').value;
+  z = parseInt(z)/10;
+  primsec3.setAttribute("value", z);
+
+
+
+
+
+
+
+
+       $( "#frecciasx" )
+           .mouseup(function() {
+          $( this ).val(1);
+            })
+           .mousedown(function() {
+          $( this ).val(0);
+        });
+
+       $( "#frecciadx" )
+           .mouseup(function() {
+          $( this ).val(1);
+            })
+           .mousedown(function() {
+          $( this ).val(0);
+        });
+          
+
+-->

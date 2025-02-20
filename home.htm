@@ -1,0 +1,420 @@
+<!-- AWP_Out_Variable Name='"coordinate".SOLAR_VECTOR.longitude' -->
+<!-- AWP_Out_Variable Name='"coordinate".SOLAR_VECTOR.latitude' -->
+<!-- AWP_Out_Variable Name='"coordinate".SOLAR_VECTOR.azimuth' -->
+<!-- AWP_Out_Variable Name='"coordinate".SOLAR_VECTOR.zenith' -->
+<!-- AWP_Out_Variable Name='"coordinate".SOLAR_VECTOR.elevation' -->
+<!-- AWP_Out_Variable Name='"coordinate".angle_hour_round' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_1".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_2".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_3".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_4".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_5".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_6".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_7".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_8".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_9".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_10".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_11".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_12".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_13".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_14".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_15".inclinometro' -->
+<!-- AWP_Out_Variable Name='"movimentazione_DB_16".inclinometro' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".actualLocalTime.DAY' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".actualLocalTime.MONTH' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".actualLocalTime.YEAR' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".actualLocalTime.HOUR' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".actualLocalTime.MINUTE' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".sunriseTime.HOUR' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".sunriseTime.MINUTE' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".sunsetTime.HOUR' -->
+<!-- AWP_Out_Variable Name='"LGF_AstroClock_DB_1".sunsetTime.MINUTE' -->
+<!-- AWP_Out_Variable Name='"MB_COMM_SLAVE".SLAVE_DB.SLAVE[64]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[0]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[1]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[2]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[3]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[4]' -->
+<!-- AWP_In_Variable Name='"from_WEB".STATUS[5]' -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Refresh" content="5">
+
+    <!-- Bootstrap CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <title>WEB SERVER S71200</title>
+  </head>
+  <body>
+  <div class="row w-100">
+  <div class="col-1 h-100 w d-inline">
+    <div class="nav flex-column nav-pills shadow-lg" aria-orientation="vertical">
+      <a class="nav-link active h4"  href="home.htm" aria-selected="true"> <img src="homey.png" alt=""> </a>
+      <a class="nav-link h4"  href="movimentazione.htm"   aria-selected="false"> <img src="move.png" alt=""> </a>
+      <a class="nav-link h4"   href="setup.htm"aria-selected="false"> <img src="setup.png" alt=""> </a>
+      <a class="nav-link h4"   href="alert.htm"aria-selected="false"> <img src="alert.png" alt=""> </a>
+      <a class="nav-link ruota270 position-absolute fixed-bottom "><img style="max-width: 100px;" src="logo.png" alt=""></a>
+    </div>
+  </div>
+  <div class="col-11 h-100">
+    <div class="tab-content">
+      <div class="tab-pane fade show active" aria-labelledby="v-pills-home-tab">
+
+        <div class="container">
+                <h1 class="text-center">HBASun - Sun Tracking System</h1>
+
+                <div class="row">
+
+    <div class="col-sm">
+      <div class="card  mb-3  shadow-lg" style="max-width: 18rem;">
+        <div class="card-header text-center h5 text-dark bg-warning">DATE & TIME</div>
+        <div class="card-body">
+        <form>
+  <div class="form-group row">
+    <label class="h5 col-4" for="date">DATE</label> <!-- SPLIT DATA GENERAL DAY / MONTH / YEAR -->
+    <input type="text" class="form-control text-center col-8" value=':="LGF_AstroClock_DB_1".actualLocalTime.DAY:/:="LGF_AstroClock_DB_1".actualLocalTime.MONTH:/:="LGF_AstroClock_DB_1".actualLocalTime.YEAR:' id="date" readonly>
+  </div>
+  <div class="form-group row">
+    <label class="h5 col-4" for="time">TIME</label> <!-- SPLIT ORA E MINUTI GENERAL TIME -->
+    <input type="text" class="form-control text-center col-8" value=':="LGF_AstroClock_DB_1".actualLocalTime.HOUR:::="LGF_AstroClock_DB_1".actualLocalTime.MINUTE:' id="time" readonly>
+  </div>
+</form>
+        </div>
+      </div>
+
+      <div class="card  mb-3  shadow-lg" style="max-width: 18rem;">
+        <div class="card-header text-center h5 text-dark bg-warning">SPOT & INFO</div>
+        <div class="card-body">
+        <div class="form-group row">
+          <label class="h5 col-5" for="sunrise">SUNRISE</label> <!-- SPLIT ORA E MINUTI SUNRISE TIME -->
+          <input type="text" class="form-control text-center col-7" value=':="LGF_AstroClock_DB_1".sunriseTime.HOUR:::="LGF_AstroClock_DB_1".sunriseTime.MINUTE:' id="sunrise" readonly>
+        </div>
+        <div class="form-group row">
+          <label class="h5 col-5" for="sunset">SUNSET</label> <!-- SPLIT ORA E MINUTI SUNSET TIME -->
+          <input type="text" class="form-control text-center col-7" value=':="LGF_AstroClock_DB_1".sunsetTime.HOUR:::="LGF_AstroClock_DB_1".sunsetTime.MINUTE:' id="sunset" readonly>
+        </div>
+        <div class="form-group row">
+          <label class="h5 col-5" for="longitude">LONGI.</label> <!-- LONGITUDE -->
+          <input type="text" class="form-control text-center col-7" value=':="coordinate".SOLAR_VECTOR.longitude:' id="longitude" readonly>
+        </div>
+        <div class="form-group row">
+          <label class="h5 col-5" for="latitude">LATITU.</label> <!-- LATITUDE -->
+          <input type="text" class="form-control text-center col-7" value=':="coordinate".SOLAR_VECTOR.latitude:' id="latitude" readonly>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div class="card  mb-3  shadow-lg" style="max-width: 18rem;">
+  <div class="card-header card-header text-center h5 text-dark bg-warning">SUN POSITION</div>
+  <div class="card-body">
+    <div class="form-group">
+      <label class="h5" for="azsouth">AZIMUTH SOUTH</label>  <!-- AZIMUTH -->
+      <input type="text" class="form-control text-center" value=':="coordinate".SOLAR_VECTOR.azimuth:' id="azsouth" readonly>
+    </div>
+    <div class="form-group">
+      <label class="h5" for="zenith">ZENITH</label> <!-- ZENITH -->
+      <input type="text" class="form-control text-center" value=':="coordinate".SOLAR_VECTOR.zenith:' id="zenith" readonly>
+    </div>
+    <div class="form-group">
+      <label class="h5" for="elevation">ELEVATION</label> <!-- ELEVATION -->
+      <input type="text" class="form-control text-center" value=':="coordinate".SOLAR_VECTOR.elevation:' id="elevation" readonly>
+    </div>
+    <div class="form-group">
+      <label class="h5" for="houranglesouth">HOUR ANGLE SOUTH</label> <!-- ANGLE HOUR -->
+      <input type="text" class="form-control text-center" value=':="coordinate".angle_hour_round:' id="houranglesouth" readonly>
+    </div>
+
+
+
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm">
+      <div class="card  mb-3  shadow-lg" style="max-width: 18rem;">
+      <div class="card-header card-header text-center h5 text-dark bg-warning">HS DIRECTION</div>
+      <div class="card-body">
+        <div class="form-group row">
+          <label class="h5 col-5" for="prim">PRIM</label> <!-- HOUR ANGLE [PRIM] -->
+          <input type="text" class="form-control text-center col-7" value=':="coordinate".angle_hour_round:' id="prim" readonly>
+        </div>
+        <div class="form-group row">
+          <label class="h5 col-5" for="sec">SEC</label> <!-- ZENITH [SEC] -->
+          <input type="text" class="form-control text-center col-7" value=':="coordinate".SOLAR_VECTOR.zenith:' id="sec" readonly>
+        </div>
+      </div>
+      </div>
+
+      <div class="card  mb-3  shadow-lg" style="max-width: 18rem;">
+      <div class="card-header card-header text-center h5 text-dark bg-warning">ALARM / STATUS</div>
+      <div class="card-body lampeggio">
+          <div class="row">
+<?xml version="1.0" encoding="utf-8"?>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[0]:' id="status0" readonly>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[1]:' id="status1" readonly>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[2]:' id="status2" readonly>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[3]:' id="status3" readonly>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[4]:' id="status4" readonly>
+<input type="text" class="form-control text-center col-7" style=" display: none;" value=':="from_WEB".STATUS[5]:' id="status5" readonly>
+<svg viewBox="0 0 300 150" width="300" height="150" xmlns="http://www.w3.org/2000/svg">
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="43.056" y="40.671">AUTO</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="131.483" cy="32.914" rx="8.377" ry="8.377" class="st0"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="42.746" y="84.108">MAN</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="131.173" cy="76.351" rx="8.377" ry="8.377" class="st1"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="42.126" y="125.141">NIGHT</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="130.553" cy="117.384" rx="8.377" ry="8.377" class="st2"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="159.873" y="40.71">SNOW</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="248.3" cy="32.953" rx="8.377" ry="8.377" class="st3"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="159.563" y="84.147">WIND</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="247.99" cy="76.39" rx="8.377" ry="8.377" class="st4"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 21.7px;" x="158.943" y="125.18">ALARM</text>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="247.37" cy="117.423" rx="8.377" ry="8.377" class="st5"/>
+</svg>
+            
+          </div>
+
+         
+       
+      <div class="form-group row m-2">
+         <a href="alert.htm"><button type="button"  class="btn btn-warning">Visualizza TRACKER Specifico</button> </a> 
+        </div>
+      
+
+
+      </div>
+      </div>
+   </div>
+  </div>
+
+
+
+<div class="col p-0">   <!-- POSIZIONI INCLINOMETRI -->
+  <div class="card shadow-lg">
+  <div class="card-header card-header text-center h5 text-dark bg-warning">SUN TRACKER POSITION</div>
+  <div class="card-body">
+    <table class="table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row"></th>  <!-- POSIZIONI INCLINOMETRI -->
+          <td>
+             <div class="form-group row">
+                    <label class="h5 col-4 text-center" for="a21tr11">INC.1</label> 
+                    <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_1".inclinometro:' id="a21tr11" readonly>
+             </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr12">INC.2</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_2".inclinometro:' id="a21tr12" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr13">INC.3</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_3".inclinometro:' id="a21tr13" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr145">INC.4</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_4".inclinometro:' id="a21tr145" readonly>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row"></th>  <!-- POSIZIONI INCLINOMETRI -->
+          <td>
+             <div class="form-group row">
+                    <label class="h5 col-4 text-center" for="a21tr21">INC.5</label>
+                    <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_5".inclinometro:' id="a21tr21" readonly>
+             </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr22">INC.6</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_6".inclinometro:' id="a21tr22" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr23">INC.7</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_7".inclinometro:' id="a21tr23" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr24">INC.8</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_8".inclinometro:' id="a21tr24" readonly>
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row"></th>  <!-- POSIZIONI INCLINOMETRI -->
+          <td>
+             <div class="form-group row">
+                    <label class="h5 col-4 text-center" for="a21tr31">INC.9</label>
+                    <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_9".inclinometro:' id="a21tr31" readonly>
+             </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr32">INC.10</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_10".inclinometro:' id="a21tr32" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr33">INC.11</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_11".inclinometro:' id="a21tr33" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr34">INC.12</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_12".inclinometro:' id="a21tr34" readonly>
+            </div>
+          </td>
+        </tr>
+
+
+        <tr>
+          <th scope="row"></th>  <!-- POSIZIONI INCLINOMETRI -->
+          <td>
+             <div class="form-group row">
+                    <label class="h5 col-4 text-center" for="a21tr41">INC.13</label>
+                    <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_13".inclinometro:' id="a21tr41" readonly>
+             </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr42">INC.14</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_14".inclinometro:' id="a21tr42" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr43">INC.15</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_15".inclinometro:' id="a21tr43" readonly>
+            </div>
+          </td>
+          <td>
+            <div class="form-group row">
+                   <label class="h5 col-4 text-center" for="a21tr44">INC.16</label>
+                   <input type="text" class="form-control text-center col-7" value=':="movimentazione_DB_16".inclinometro:' id="a21tr44" readonly>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+
+
+
+$(document).ready(function(){
+  $("svg").each(function(){
+        var a = $("#status0").attr("value");
+        var b = $("#status1").attr("value");
+        var c = $("#status2").attr("value");
+        var d = $("#status3").attr("value");
+        var e = $("#status4").attr("value");
+        var f = $("#status5").attr("value");
+       if ( a == '1'){
+          $(this).find(".st0").css({ fill: 'green' });
+       }else{
+        $(this).find(".st0").css({ fill: 'grey' });
+       };
+              if ( b == '1'){
+    $(this).find(".st1").css({ fill: 'green' });
+       }else{
+    $(this).find(".st1").css({ fill: 'grey' });
+       };
+                     if ( c == '1'){
+    $(this).find(".st2").css({ fill: 'yellow' });
+       }else{
+    $(this).find(".st2").css({ fill: 'grey' });
+       };
+                     if ( d == '1'){
+    $(this).find(".st3").css({ fill: 'yellow' });
+       }else{
+    $(this).find(".st3").css({ fill: 'grey' });
+       };
+                     if ( e == '1'){
+    $(this).find(".st4").css({ fill: 'yellow' });
+       }else{
+    $(this).find(".st4").css({ fill: 'grey' });
+       };
+                     if ( f == '1'){
+                                $(".lampeggio").addClass("lampeggio--attivo");
+
+    $(this).find(".st5").css({ fill: 'red' });
+       }else{
+    $(this).find(".st5").css({ fill: 'grey' });
+       };
+  }); 
+
+
+
+});
+
+</script>
+</body>
+</html>
+
+
+<!--
+
+
+
+      var a = $("#status").attr("value");
+       if ( a == '32'){
+          $(".lampeggio").addClass("lampeggio--attivo");
+          $("#status").val("ALARM");
+       }else if (a == '16'){
+          $("#status").val("WIND");
+       }else if (a == '8'){
+          $("#status").val("SNOW");
+       }else if (a == '4'){
+          $("#status").val("NIGHT");
+       }else if (a == '2'){
+          $("#status").val("MANUAL");
+       }else if (a == '1'){
+          $("#status").val("AUTO IN START");
+       }else if (a == '0'){
+          $("#status").val("AUTO IN STOP");
+       }else{
+             return null;
+       };
+
+
+-->
